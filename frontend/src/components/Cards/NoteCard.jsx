@@ -3,7 +3,7 @@ import moment from "moment";
 import { MdOutlinePushPin, MdCreate, MdDelete } from "react-icons/md";
 import Modal from "react-modal";
 
-import DisplayNote from "../../components/Cards/displayNote";
+import DisplayNote from "/DisplayNote";
 const NoteCard = ({
   title,
   date,
