@@ -13,12 +13,15 @@ connectDb();
 
 //middlewares.
 app.use(express.json());
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+// Set up CORS
+const corsOptions = {
+  origin: process.env.CLIENT_URL || "*", // Allow requests from this origin
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed methods
+  allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+  credentials: true, // Allow credentials (cookies, authorization headers)
+};
 
+app.use(cors(corsOptions));
 //routes
 app.use("/notes", require("./routes/notesRoutes.js"));
 app.use("/user", require("./routes/userRoutes.js"));
