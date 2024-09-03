@@ -4,10 +4,10 @@ const app = express();
 const dotenv = require("dotenv").config();
 const asyncHandler = require("express-async-handler");
 const jwt = require("jsonwebtoken");
-const connectDb = require("./config/dbConnection.js");
-const Note = require("./models/note.model.js");
-const errorHandler = require("./middlewares/errorHandler.js");
-const User = require("./models/user.model.js");
+const connectDb = require("../config/dbConnection.js");
+const Note = require("../models/note.model.js");
+const errorHandler = require("../middlewares/errorHandler.js");
+const User = require("../models/user.model.js");
 
 connectDb();
 
@@ -23,8 +23,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 //routes
-app.use("/notes", require("./routes/notesRoutes.js"));
-app.use("/user", require("./routes/userRoutes.js"));
+app.use("/notes", require("../routes/notesRoutes.js"));
+app.use("/user", require("../routes/userRoutes.js"));
 app.use(errorHandler);
 app.listen(3000);
 
