@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const dotenv = require("dotenv").config();
+require("dotenv").config();
 const asyncHandler = require("express-async-handler");
 const jwt = require("jsonwebtoken");
 const connectDb = require("../config/dbConnection.js");
