@@ -1,12 +1,15 @@
-require("dotenv").config();
+require("dotenv").config(); // Load environment variables
+
 const mongoose = require("mongoose");
 
 const connectDb = async () => {
   const connectionString = process.env.CONNECTION_STRING;
 
+  console.log("CONNECTION_STRING:", connectionString); // Debugging line
+
   if (!connectionString) {
     console.error("CONNECTION_STRING environment variable is not set");
-    process.exit(1); // Exit the process with an error code
+    process.exit(1);
   }
 
   try {
